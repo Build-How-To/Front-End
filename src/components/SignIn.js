@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: 'black',
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -96,7 +96,7 @@ const SignInForm = e => {
             fullWidth
             id="username"
             label="Username"
-            value={credentials.email}
+            value={credentials.username}
             onChange={handleChanges}
             name="username"
             autoComplete="username"
@@ -127,7 +127,7 @@ const SignInForm = e => {
           <Grid container>
             
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link to='/signup' variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>

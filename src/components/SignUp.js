@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+// import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,17 +15,14 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-const onSubmitHandler = e => {
-  e.preventDefault();
-  console.log("Button was clicked!")
-}
+
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        howTo
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -42,7 +41,7 @@ const useStyles = makeStyles(theme => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: 'black'
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -52,8 +51,29 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(3, 0, 2),
   },
 }));
-export default function SignUp() {
+export default function SignUp(props) {
   const classes = useStyles();
+  const history = useHistory();
+  const [user, setUser] = useState({
+    first_name:'',
+    last_name:'',
+    username:'',
+    email:'',
+    password:''
+  });
+  console.log('checking for user', user);
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    // props.signup(user);
+    // history.push('/')
+  };
+  console.log(props);
+
+  const handleChanges = event => {
+    event.preventDefault();
+    setUser({...user, [event.target.name]: event.target.value });
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -74,7 +94,8 @@ export default function SignUp() {
                 variant="outlined"
                 required
                 fullWidth
-                id="firstName"
+                value={user.first_name}
+                onChange={handleChanges}
                 label="First Name"
                 autoFocus
               />
@@ -84,7 +105,8 @@ export default function SignUp() {
                 variant="outlined"
                 required
                 fullWidth
-                id="lastName"
+                value={user.last_name}
+                onChange={handleChanges}
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
@@ -95,7 +117,20 @@ export default function SignUp() {
                 variant="outlined"
                 required
                 fullWidth
-                id="email"
+                value={user.username}
+                onChange={handleChanges}
+                label="User Name"
+                name="username"
+                autoComplete="User Name"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                value={user.email}
+                onChange={handleChanges}
                 label="Email Address"
                 name="email"
                 autoComplete="email"
@@ -109,7 +144,8 @@ export default function SignUp() {
                 name="password"
                 label="Password"
                 type="password"
-                id="password"
+                value={user.password}
+                onChange={handleChanges}
                 autoComplete="current-password"
               />
             </Grid>
@@ -120,7 +156,7 @@ export default function SignUp() {
               />
             </Grid>
           </Grid>
-          <Button onClick={onSubmitHandler}
+          <Button onClick={handleSubmit}
             type="submit"
             fullWidth
             variant="contained"
@@ -131,7 +167,7 @@ export default function SignUp() {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link to='/signin' variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>
