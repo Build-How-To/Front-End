@@ -14,6 +14,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import Axios from 'axios';
 
 
 
@@ -63,12 +64,18 @@ export default function SignUp(props) {
   });
   console.log('checking for user', user);
 
-  const handleSubmit = event => {
-    event.preventDefault();
-    // props.signup(user);
-    // history.push('/')
+const handleSubmit = (values, {props, resetForm})=> {
+  console.log('values from handleSubmit',values);
+    Axios
+    .post('https://how-to-build-week.herokuapp.com/api/auth/register',values)
+    .then(resp =>{
+      // props.history.push('/login')
+      console.log('response from handleSubmit',resp);
+    })
+.catch(err =>console.log(err.resp));
+    
   };
-  console.log(props);
+ 
 
   const handleChanges = event => {
     event.preventDefault();
@@ -179,4 +186,4 @@ export default function SignUp(props) {
       </Box>
     </Container>
   );
-}
+  }
