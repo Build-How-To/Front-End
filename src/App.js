@@ -12,6 +12,9 @@ import PrivateRoute from './components/PrivateRoute';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+import dummyData from './dummy-data';
+import PostsPage from './components/PostsContainer/PostsPage';
+import CommentSection from './components/CommentSection/CommentSectionContainer';
 
 
 
@@ -20,6 +23,7 @@ import './App.css';
 
 
 const App = (props) => {
+  const [data, setData] = useState(dummyData);
   const [currentUser, setCurrentUser] = useState((localStorage.getItem('user')) ? JSON.pars(localStorage.getItem('user')) : {});
   
   return (
@@ -29,8 +33,8 @@ const App = (props) => {
       <Switch>
       
         <Route exact path='/Signin' component={SignIn} />
-        <Route exact path='/Signup' component={SignUp} />}
-        
+        <Route exact path='/Signup' component={SignUp} />
+        <Route exact path='/posts' component={PostsPage} />
 
     
       </Switch>
