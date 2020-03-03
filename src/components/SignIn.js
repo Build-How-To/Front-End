@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { useHistory } from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -46,8 +48,35 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SignIn() {
+const SignIn = props => {
   const classes = useStyles();
+  const history = useHistory();
+  const [credentials, setCredentials] = useState({
+    username: '',
+    password: ''
+  });
+
+  const handleChanges = e => {
+    let name = e.target.name;
+    setCredentials({...credentials, [name]: e.target.value });
+  };
+
+const SignInForm = e => {
+  e.preventDefault();
+  axiosWithAuth()
+  .post('/api/user/signin', credentials)
+  .then(res => {
+    console.log(res.data)
+    localStorage.setItem('token', res.data.token);
+    localStorage.setItem('message', res.data.message);
+    history.push('/dashboard');
+  })
+  .catch(err => console.log(err));
+};
+
+
+  
+  
 
   return (
     <Container component="main" maxWidth="xs">
@@ -67,6 +96,8 @@ export default function SignIn() {
             fullWidth
             id="email"
             label="Email Address"
+            value={credentials.email}
+            onChange={handleChanges}
             name="email"
             autoComplete="email"
             autoFocus
@@ -79,7 +110,8 @@ export default function SignIn() {
             name="password"
             label="Password"
             type="password"
-            id="password"
+            value={credentials.password}
+            onChange={handleChanges}
             autoComplete="current-password"
           />
           <FormControlLabel
@@ -115,3 +147,4 @@ export default function SignIn() {
     </Container>
   );
 }
+export default SignIn;
