@@ -20,7 +20,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        howTo 
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -94,12 +94,12 @@ const SignInForm = e => {
             margin="normal"
             required
             fullWidth
-            id="email"
-            label="Email Address"
+            id="username"
+            label="Username"
             value={credentials.email}
             onChange={handleChanges}
-            name="email"
-            autoComplete="email"
+            name="username"
+            autoComplete="username"
             autoFocus
           />
           <TextField
@@ -114,10 +114,7 @@ const SignInForm = e => {
             onChange={handleChanges}
             autoComplete="current-password"
           />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
+          
           <Button
             type="submit"
             fullWidth
@@ -128,11 +125,7 @@ const SignInForm = e => {
             Sign In
           </Button>
           <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
+            
             <Grid item>
               <Link href="#" variant="body2">
                 {"Don't have an account? Sign Up"}
