@@ -29,7 +29,7 @@ class Login extends React.Component {
       .post('/auth/login', this.state.credentials)
       .then(res => {
           console.log('response', res)
-        window.localStorage.setItem('token', res.data.payload);
+        window.localStorage.setItem('token', res.data.token);
         // navigate the user to /protected (whatever landing page)
         this.props.history.push('/protected');
       })

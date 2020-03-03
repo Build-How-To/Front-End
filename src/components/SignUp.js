@@ -6,6 +6,7 @@ import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 
 class Signup extends React.Component {
+  
   state = {
     credentials: {
       username: '',
@@ -25,8 +26,8 @@ class Signup extends React.Component {
       }
     });
   };
-
-  login = e => {
+ 
+  signup = e => {
     e.preventDefault();
     // Make a POST request and send the credentials object to the api
     axiosWithAuth()
@@ -39,8 +40,9 @@ class Signup extends React.Component {
       })
       .catch(err => console.log(err));
   };
-
+  
   render() {
+    console.log("State:", this.state.credentials)
     return (
       <div>
         <form onSubmit={this.signup}>
@@ -64,13 +66,13 @@ class Signup extends React.Component {
           />
           <input
             type="text"
-            name="firstname"
+            name="first_name"
             value={this.state.credentials.first_name}
             onChange={this.handleChange}
           />
           <input
             type="text"
-            name="lastname"
+            name="last_name"
             value={this.state.credentials.last_name}
             onChange={this.handleChange}
           />
