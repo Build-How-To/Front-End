@@ -1,45 +1,12 @@
-import React, { useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
 
-import { HowToContext } from './context/HowToContext';
-
-import SignIn from './components/SignIn';
-
-import SignUp from './components/SignUp';
-import PrivateRoute from './components/PrivateRoute';
-// import Header from './components/Header';
-import Footer from './components/Footer';
+import React from "react";
 
 
-
-
-import './App.css';
-// import SignIn from './components/SignIn';
-
-
-const App = (props) => {
-  
-  const [currentUser, setCurrentUser] = useState((localStorage.getItem('user')) ? JSON.pars(localStorage.getItem('user')) : {});
-  
+export default function App() {
   return (
-  <>
-    <HowToContext.Provider value={{currentUser, setCurrentUser}}>
-      
-
-      <Switch>
-      
-        <Route exact path='/Signin' component={SignIn} />
-        <Route exact path='/Signup' component={SignUp} />
-     
-
-    
-      </Switch>
-      <Footer />
-      
-    </HowToContext.Provider>
-  </>
+    <div className="App">
+      <h1>Hello World!</h1>
+      <h2>Start editing to see some magic happen!</h2>
+    </div>
   );
-
 }
-
-export default App;
