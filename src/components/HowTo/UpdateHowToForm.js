@@ -28,12 +28,24 @@ const HowTobutton = styled.button `
 padding: 10px;
 margin: 20px;
 `
-const HowToForm = props => {
-    const {handleChanges, submitForm, howTo} useContext{HowToFormContext}
-}
+const UpdateHowToForm = props => {
+    const {handleChanges, submitForm, howTo} = useContext(HowToFormContext)
+
 
 return (
     <HowToform onSubmit= {submitForm}>
-
+        <HowTolabel htmlFor='title'>Title</HowTolabel>
+        <HowToinput
+        id='title'
+        name='title'
+        type='text'
+        onChange={handleChanges}
+        placeholder="title"
+        value={howTo.title}
+    />
+<HowTobutton type='submit'>Add HowTo</HowTobutton>
     </HowToform>
 )
+}
+
+export default UpdateHowToForm;
