@@ -19,14 +19,7 @@ import { HowToFormContext } from './contexts/HowToFormContext';
 
 export default function App() {
 
-  const [howTo, setHowTo] = useState({
-    title:'',
-    description: '',
-    category: '',
-    difficulty:'',
-    creator_user_id:'',
-    tries: ''
-  });
+  
 
   const [ howToList, setHowToList ] = useState([]);
 
@@ -48,7 +41,7 @@ export default function App() {
   return (
     <div className='App'>
       <HowToContext.Provider value={{howToList}}>
-        <HowToFormContext.Provider value ={{howToList, setHowToList, howTo, setHowTo}}>
+        <HowToFormContext.Provider value ={{howToList, setHowToList}}>
       <Router>
         <Header />
         <Route exact path="/login" component={Login} />
