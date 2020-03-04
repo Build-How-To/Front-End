@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, Redirect, useHistory } from 'react-router-dom';
 import Axios from 'axios';
-import axiosWithAuth from './utils/axiosWithAuth';
+
 //components
 import PrivateRoute from './components/PrivateRoute';
 import Login from './components/Login';
@@ -12,6 +12,7 @@ import Header from './components/Header';
 import AddHowToForm from './components/HowTo/AddHowToForm';
 import HowToList from './components/HowTo/HowToList';
 import HowToCard from './components/HowTo/HowToCard';
+import axiosWithAuth from './utils/axiosWithAuth';
 //contextAPI
 import { HowToContext } from "./contexts/HowToContext";
 import { HowToFormContext } from './contexts/HowToFormContext';
