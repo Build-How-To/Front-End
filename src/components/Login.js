@@ -5,20 +5,15 @@ import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 
 
-class Signup extends React.Component {
-  
+class Login extends React.Component {
   state = {
     credentials: {
       username: '',
-      password: '',
-      email:'',
-      first_name:'',
-      last_name:''
+      password: ''
     }
   };
 
   handleChange = e => {
-    console.log('e',e)
     this.setState({
       credentials: {
         ...this.state.credentials,
@@ -26,26 +21,25 @@ class Signup extends React.Component {
       }
     });
   };
- 
-  signup = e => {
+
+  login = e => {
     e.preventDefault();
     // Make a POST request and send the credentials object to the api
     axiosWithAuth()
-      .post('/auth/register', this.state.credentials)
+      .post('/auth/login', this.state.credentials)
       .then(res => {
-          console.log('response from signup', res)
+          console.log('response', res)
         window.localStorage.setItem('token', res.data.token);
         // navigate the user to /protected (whatever landing page)
         this.props.history.push('/home');
       })
       .catch(err => console.log(err));
   };
-  
+
   render() {
-    console.log("State:", this.state.credentials)
     return (
       <div>
-        <form onSubmit={this.signup}>
+        <form onSubmit={this.login}>
           <input
             type="text"
             name="username"
@@ -58,24 +52,6 @@ class Signup extends React.Component {
             value={this.state.credentials.password}
             onChange={this.handleChange}
           />
-          <input
-            type="text"
-            name="email"
-            value={this.state.credentials.email}
-            onChange={this.handleChange}
-          />
-          <input
-            type="text"
-            name="first_name"
-            value={this.state.credentials.first_name}
-            onChange={this.handleChange}
-          />
-          <input
-            type="text"
-            name="last_name"
-            value={this.state.credentials.last_name}
-            onChange={this.handleChange}
-          />
           <button>Log in</button>
         </form>
       </div>
@@ -83,7 +59,7 @@ class Signup extends React.Component {
   }
 }
 
-export default Signup;
+export default Login;
 
 
 
