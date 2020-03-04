@@ -1,6 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+import { useParams } from 'react-router';
 import { HowToFormContext } from '../contexts/HowToFormContext';
 import styled from 'styled-components';
+
+
+
+
+
 
 const HowToform = styled.form `
 display:flex;
@@ -28,9 +34,21 @@ const HowTobutton = styled.button `
 padding: 10px;
 margin: 20px;
 `
-const UpdateHowToForm = props => {
-    const {handleChanges, submitForm, howTo} = useContext(HowToFormContext)
 
+
+
+
+const UpdateHowToForm = props => {
+    const {howToList, setHowToList} = useContext(HowToFormContext)
+
+    const [howTo, setHowTo] = useState({
+        title:'',
+        description: '',
+        category: '',
+        difficulty:'',
+        creator_user_id:'',
+        tries: ''
+      });
 
 return (
     <HowToform onSubmit= {submitForm}>

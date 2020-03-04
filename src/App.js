@@ -7,7 +7,7 @@ import Axios from 'axios';
 import PrivateRoute from './components/PrivateRoute';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import Home from './components/Home';
+
 import Header from './components/Header';
 import AddHowToForm from './components/HowTo/AddHowToForm';
 import HowToList from './components/HowTo/HowToList';
@@ -19,14 +19,7 @@ import { HowToFormContext } from './contexts/HowToFormContext';
 
 export default function App() {
 
-  const [howTo, setHowTo] = useState({
-    title:'',
-    description: '',
-    category: '',
-    difficulty:'',
-    creator_user_id:'',
-    tries: ''
-  });
+  
 
   const [ howToList, setHowToList ] = useState([]);
 
@@ -35,26 +28,27 @@ export default function App() {
     .get('/guides')
     .then(res => {
       console.log('response from getguide API', res);
-      // setHowToList(res.data)
+      setHowToList(res.data)
+  
     })
     .catch(err => {
       console.error('error getting HowTo List', err);
-    }, [howTo]);
-  })
+    });
+  },[])
  
-
+  console.log ('howto state',howToList);
   
   return (
     <div className='App'>
-      <HowToContext.Provider value={{}}>
-        <HowToFormContext.Provider value ={{}}>
+      <HowToContext.Provider value={{howToList}}>
+        <HowToFormContext.Provider value ={{howToList, setHowToList}}>
       <Router>
         <Header />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
-        <PrivateRoute exact path="/home" component={Home} />
+        
         <PrivateRoute exact path="/howtolist" component={HowToList} />
-        <PrivateRoute exact path="/howtocard" component={HowToCard} />
+        <PrivateRoute exact path="/howtocard/:id" component={HowToCard} />
         {/* <PrivateRoute exact path="/addhowto" component={AddHowToForm} /> */}
       </Router>
       </HowToFormContext.Provider>
