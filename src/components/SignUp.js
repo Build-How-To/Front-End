@@ -33,10 +33,10 @@ class Signup extends React.Component {
     axiosWithAuth()
       .post('/auth/register', this.state.credentials)
       .then(res => {
-          console.log('response', res)
-        window.localStorage.setItem('token', res.data.payload);
+          console.log('response from signup', res)
+        window.localStorage.setItem('token', res.data.token);
         // navigate the user to /protected (whatever landing page)
-        this.props.history.push('/protected');
+        this.props.history.push('/home');
       })
       .catch(err => console.log(err));
   };
