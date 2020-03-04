@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link }from 'react-router-dom';
+import { NavLink }from 'react-router-dom';
 import styled from 'styled-components';
 
 const HeaderDiv =styled.div `
@@ -29,7 +29,7 @@ const Header = props => {
         <HeaderDiv>
             <h1>Welcome to howTo</h1>
             <HeaderNav>
-            <Link to='/addhowto'>Add a howTo</Link>
+            <NavLink to='/addhowto'>Add a howTo</NavLink>
             </HeaderNav>
         </HeaderDiv>
     );

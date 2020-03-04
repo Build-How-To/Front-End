@@ -48,14 +48,14 @@ export default function App() {
   return (
     <div className='App'>
       <HowToContext.Provider value={{howToList}}>
-        <HowToFormContext.Provider value ={{}}>
+        <HowToFormContext.Provider value ={{howToList, setHowToList, howTo, setHowTo}}>
       <Router>
         <Header />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
         
         <PrivateRoute exact path="/howtolist" component={HowToList} />
-        <PrivateRoute exact path="/howtocard" component={HowToCard} />
+        <PrivateRoute exact path="/howtocard/:id" component={HowToCard} />
         {/* <PrivateRoute exact path="/addhowto" component={AddHowToForm} /> */}
       </Router>
       </HowToFormContext.Provider>
