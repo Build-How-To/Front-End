@@ -8,9 +8,9 @@ import PrivateRoute from './components/PrivateRoute';
 
 import Login2 from './components/Login2';
 import FormikSingUpForm from './components/SignUp2';
+
+
 import Home from './components/Home';
-
-
 import Header from './components/Header';
 import AddHowToForm from './components/HowTo/AddHowToForm';
 import HowToList from './components/HowTo/HowToList';
@@ -50,9 +50,9 @@ export default function App(props) {
 
           <Route exact path="/login2" render={props =><Login2 {...props }/>} /> 
           <Route exact path="/signup2" render={props =><FormikSingUpForm {...props }/>} />
-          <PrivateRoute exact path="/" component={Home} />
+        
          
-   
+        <PrivateRoute exact path="/home" component={Home} />
         <PrivateRoute exact path="/howtolist" component={HowToList} />
         <PrivateRoute exact path="/howtocard/:id" component={HowToCard} />
         {/* <PrivateRoute exact path="/addhowto" component={AddHowToForm} /> */}
