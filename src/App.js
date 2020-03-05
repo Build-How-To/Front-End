@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Link, Redirect, useHistory } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Redirect, useHistory, NavLink } from 'react-router-dom';
 import Axios from 'axios';
 
 //components
@@ -23,6 +23,7 @@ import axiosWithAuth from './utils/axiosWithAuth';
 //contextAPI
 import { HowToContext } from "./contexts/HowToContext";
 import { HowToFormContext } from './contexts/HowToFormContext';
+import './App.css';
 
 const App = (props) => {
 
@@ -50,7 +51,13 @@ const App = (props) => {
       <HowToContext.Provider value={{howToList}}>
         <HowToFormContext.Provider value ={{howToList, setHowToList}}>
       <Router>
-
+      <nav>
+        <h1>howTo</h1>
+        <div>
+          <NavLink exact to="/addhowtoform">Add howTo</NavLink>
+          <NavLink exact to="/updatehowtoform">Update a howTo</NavLink>
+        </div>
+      </nav>
           <Route exact path="/login" render={props =><Login2 {...props }/>} /> 
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/logout" component={Logout} />
