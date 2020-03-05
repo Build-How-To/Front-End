@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
-
-
-
-
 class Login extends React.Component {
   state = {
     credentials: {
@@ -43,12 +39,14 @@ class Login extends React.Component {
           <input
             type="text"
             name="username"
+            placeholder="username"
             value={this.state.credentials.username}
             onChange={this.handleChange}
-          />
+          />\
           <input
             type="password"
             name="password"
+            placeholder="password"
             value={this.state.credentials.password}
             onChange={this.handleChange}
           />
