@@ -7,7 +7,10 @@ import Axios from 'axios';
 import PrivateRoute from './components/PrivateRoute';
 
 import Login2 from './components/Login2';
-import FormikSingUpForm from './components/SignUp2';
+
+import Signup from './components/SignUp';
+import Home from './components/Home';
+
 
 
 import Home from './components/Home';
@@ -30,14 +33,13 @@ export default function App(props) {
    axiosWithAuth()
     .get('/guides')
     .then(res => {
-      console.log('response from getguide API', res);
-      setHowToList(res.data)
-  
+      //console.log('response from getguide API', res);
+      // setHowToList(res.data)
     })
     .catch(err => {
-      console.error('error getting HowTo List', err);
-    });
-  },[])
+      //console.error('error getting HowTo List', err);
+    }, [howTo]);
+  })
  
   console.log ('howto state',howToList);
   
@@ -46,16 +48,16 @@ export default function App(props) {
       <HowToContext.Provider value={{howToList}}>
         <HowToFormContext.Provider value ={{howToList, setHowToList}}>
       <Router>
-        <Header />
 
-          <Route exact path="/login2" render={props =><Login2 {...props }/>} /> 
-          <Route exact path="/signup2" render={props =><FormikSingUpForm {...props }/>} />
+          <Route exact path="/login" render={props =><Login2 {...props }/>} /> 
+          <Route exact path="/signup" component={Signup} />
+          {/*<Route exact path="/signup" render={props =><FormikSingUpForm {...props }/>} />*/}
         
-         
-        <PrivateRoute exact path="/home" component={Home} />
-        <PrivateRoute exact path="/howtolist" component={HowToList} />
-        <PrivateRoute exact path="/howtocard/:id" component={HowToCard} />
-        {/* <PrivateRoute exact path="/addhowto" component={AddHowToForm} /> */}
+          <PrivateRoute exact path="/home" component={Home} />
+          <PrivateRoute exact path="/howtolist" component={HowToList} />
+          <PrivateRoute exact path="/howtocard" component={HowToCard} />
+          {/* <PrivateRoute exact path="/addhowto" component={AddHowToForm} /> */}
+
 
       </Router>
       </HowToFormContext.Provider>
