@@ -57,6 +57,7 @@ const App = (props) => {
           <NavLink exact to="/addhowtoform">Add howTo</NavLink>
           <NavLink exact to="/updatehowtoform">Update a howTo</NavLink>
           <NavLink exact to="/login">Login</NavLink>
+          <NavLink exact to="/signup">Sign Up</NavLink>
         </div>
       </nav>
       
