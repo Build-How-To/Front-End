@@ -7,10 +7,13 @@ import Axios from 'axios';
 import PrivateRoute from './components/PrivateRoute';
 
 import Login2 from './components/Login2';
+
 import Signup from './components/SignUp';
 import Home from './components/Home';
 
 
+
+import Home from './components/Home';
 import Header from './components/Header';
 import AddHowToForm from './components/HowTo/AddHowToForm';
 import HowToList from './components/HowTo/HowToList';
@@ -45,6 +48,7 @@ export default function App(props) {
       <HowToContext.Provider value={{howToList}}>
         <HowToFormContext.Provider value ={{howToList, setHowToList}}>
       <Router>
+
           <Route exact path="/login" render={props =><Login2 {...props }/>} /> 
           <Route exact path="/signup" component={Signup} />
           {/*<Route exact path="/signup" render={props =><FormikSingUpForm {...props }/>} />*/}
@@ -53,6 +57,7 @@ export default function App(props) {
           <PrivateRoute exact path="/howtolist" component={HowToList} />
           <PrivateRoute exact path="/howtocard" component={HowToCard} />
           {/* <PrivateRoute exact path="/addhowto" component={AddHowToForm} /> */}
+
 
       </Router>
       </HowToFormContext.Provider>

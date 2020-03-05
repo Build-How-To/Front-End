@@ -4,50 +4,7 @@ import * as Yup from "yup";
 import { Link } from "react-router-dom"
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
-// const LoginForm = (props) =>{
-
-//     // console.log("PROPS:", props)
-
-//     const handleNext = e => {
-//         e.preventDefault()
-//        // props.history.push("/")
-//         console.log("handleNext was clicked!")
-//     }
-
-//     return (
-//         <Form>
-//             <h1>Log in</h1>
-//             <Field type="text" name="username" placeholder="Username" />
-//             <Field type="password" name="password" placeholder="Password" />
-//             <button onClick={handleNext} type="submit">Log in</button>
-//         </Form>
-//       );
-
-// }
-
-// const FormikLoginForm = withFormik({
-//     mapPropsToValues({ username, password }) {
-//       return {
-//         username: username || "",
-//         password: password || ""
-//       };
-//     },
   
-//     handleSubmit(props, values) {
-//         // Make a POST request and send the credentials object to the api
-//         axiosWithAuth()
-//           .post('/auth/login', values)
-//           .then(res => {
-//                 console.log("handleSubit:", res)
-//                 window.localStorage.setItem('token', res.data.token);
-//                 // navigate the user to /protected (whatever landing page)
-//           })
-//           .catch(err => console.log('props', props, err));
-//     }
-//   })(LoginForm);
-
-// export default FormikLoginForm;
-
 const Schema = Yup.object().shape({
     username: Yup.string().required("Enter your username"),
     password: Yup.string().required("Enter your password")
@@ -140,3 +97,4 @@ const Schema = Yup.object().shape({
     );
   };
   export default Login;
+

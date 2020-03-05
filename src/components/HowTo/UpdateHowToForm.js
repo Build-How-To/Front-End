@@ -5,6 +5,8 @@ import styled from 'styled-components';
 
 
 
+// useEffect(() => {
+//     const itemToUpdate = howToList.find(thing => `${thing.id}` === id);
 
 
 
