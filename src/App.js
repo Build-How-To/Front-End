@@ -68,7 +68,7 @@ const App = (props) => {
         
           <PrivateRoute exact path="/home" component={Home} />
           <PrivateRoute exact path="/howtolist" component={HowToList} />
-          {/* <PrivateRoute exact path="/howtocard/:id" component={HowToCard} /> */}
+          <PrivateRoute exact path="/howtocard/:id" component={HowToCard} />
           <PrivateRoute exact path="/addreviewform" component={AddReviewForm} />
           <PrivateRoute exact path="/updatehowtoform/:id" render={props => <UpdateHowToForm {...props} />} />
          

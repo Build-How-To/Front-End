@@ -5,11 +5,11 @@ import  { HowToContext } from '../../contexts/HowToContext';
 import axiosWithAuth from '../../utils/axiosWithAuth';
 
 const HowToCard = props =>{
-    // let history = useHistory();
-    // const handleClick = e => {
-    //     e.preventDefault()
-    //     history.push(`/updatehowtoform/${id}`)
-    // }
+    let history = useHistory();
+    const handleClick = e => {
+        e.preventDefault()
+        history.push(`/updatehowtoform/${id}`)
+    }
     
     const { id } = useParams();
   
@@ -29,9 +29,9 @@ const HowToCard = props =>{
         <div>
             <h2 className="howto-list-title">{guide.title}</h2>
             <h2>Description:{guide.description}</h2>
-             {/* <button onClick={handleClick}>Edit</button>      
-             <button onClick={handleClick}>Delete</button>  */}
-        
+             <button onClick={handleClick}>Edit</button>      
+             <button onClick={handleClick}>Delete</button> 
+              
         </div>
     )
 }

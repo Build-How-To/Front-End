@@ -6,6 +6,7 @@ import  { HowToContext } from '../../contexts/HowToContext';
 const HowToList = props =>{
     const { howToList } =useContext(HowToContext)
     console.log('from the howto context', howToList)
+    
     return (
         <div className="howto-list-wrapper">
             {howToList.map(howTo => (
