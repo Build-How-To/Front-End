@@ -6,7 +6,7 @@ import Axios from 'axios';
 //components
 import PrivateRoute from './components/PrivateRoute';
 import Login2 from './components/Login2';
-import FormikSingUpForm from './components/SignUp2';
+import Signup from './components/SignUp';
 import Home from './components/Home';
 import Header from './components/Header';
 import AddHowToForm from './components/HowTo/AddHowToForm';
@@ -34,11 +34,11 @@ export default function App(props) {
    axiosWithAuth()
     .get('/guides')
     .then(res => {
-      console.log('response from getguide API', res);
+      //console.log('response from getguide API', res);
       // setHowToList(res.data)
     })
     .catch(err => {
-      console.error('error getting HowTo List', err);
+      //console.error('error getting HowTo List', err);
     }, [howTo]);
   })
  
@@ -50,9 +50,11 @@ export default function App(props) {
         <HowToFormContext.Provider value ={{}}>
       <Router>
         <Header />
-          <Route exact path="/login2" render={props =><Login2 {...props }/>} /> 
-          <Route exact path="/signup2" render={props =><FormikSingUpForm {...props }/>} />
-          <PrivateRoute exact path="/" component={Home} />
+          <Route exact path="/login" render={props =><Login2 {...props }/>} /> 
+          <Route exact path="/signup" component={Signup} />
+          {/*<Route exact path="/signup" render={props =><FormikSingUpForm {...props }/>} />*/}
+        
+          <PrivateRoute exact path="/home" component={Home} />
           <PrivateRoute exact path="/howtolist" component={HowToList} />
           <PrivateRoute exact path="/howtocard" component={HowToCard} />
           {/* <PrivateRoute exact path="/addhowto" component={AddHowToForm} /> */}
