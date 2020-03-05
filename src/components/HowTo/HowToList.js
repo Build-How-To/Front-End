@@ -10,7 +10,7 @@ const HowToList = props =>{
         <div className="howto-list-wrapper">
             {howToList.map(howTo => (
                 <div className="howTo-card" key={howTo.id}>
-                    <NavLink exact to={`/howtocard/${howTo.id}`}>
+                    <NavLink className="howto-Nav"exact to={`/howtocard/${howTo.id}`}>
                     <h1>{howTo.title}</h1>
                     {/* <p>Description: {howTo.description}</p> */}
                     <p>Category: {howTo.category}</p>

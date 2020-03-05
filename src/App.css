@@ -4,6 +4,9 @@
 body{
   background-color: lightblue;
 }
+NavLink {
+  text-decoration: none;
+}
 .home-wrapper{
   margin-top: 36px;
   display: flex;
@@ -29,6 +32,7 @@ body{
   display:flex;
   border: 1 px solid gray;
   text-decoration: none;
+  
 
 }
 .howto-list-wrapper {
