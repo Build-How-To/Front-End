@@ -24,15 +24,10 @@ const HowToCard = props =>{
     }
 
     
-    // useEffect(()=> {
-    //     axiosWithAuth()
-    //     .get('/')
-    //     .then
-    //     .catch
-    // })
+    
     return (
         <div>
-            <h2>Title:{guide.title}</h2>
+            <h2 className="howto-list-title">{guide.title}</h2>
             <h2>Description:{guide.description}</h2>
              {/* <button onClick={handleClick}>Edit</button>      
              <button onClick={handleClick}>Delete</button>  */}

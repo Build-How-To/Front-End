@@ -9,8 +9,8 @@ const Home =(props) =>{
         props.history.push('/howtolist');
     };
     return(
-        <div>
-            <Link to ="/howtolist">Welcome to howTo!</Link>
+        <div className="home-wrapper">
+            <Link className="home-link" to ="/howtolist">Welcome to howTo!</Link>
             
         </div>
     )

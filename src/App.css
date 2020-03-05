@@ -1,16 +1,52 @@
-.login {
-  background-color: lightblue;
-}
 
-.form-login{
-  background-color: lightblue;
-}
 
-.signup {
-  background-color: lightblue;
-  height:500px;
 
-}
 body{
   background-color: lightblue;
+}
+.home-wrapper{
+  margin-top: 36px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.howto-Nav{
+  text-decoration: none;
+}
+
+.home-wrapper h2{
+  color: #1c5d76;
+}
+.home-link{
+  text-decoration: none;
+  color: #1c5d76;
+  font-weight: bold;
+  font-size:50px;
+
+}
+
+.howTo-card {
+  display:flex;
+  border: 1 px solid gray;
+  text-decoration: none;
+
+}
+.howto-list-wrapper {
+  margin-top: 36px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.howto-list-title a {
+  text-decoration: none;
+}
+
+.howTo-header {
+  color:  #1c5d76;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #1c5d76;
+  font-weight: bold;
+  margin-right: 8px;
 }
