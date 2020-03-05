@@ -10,7 +10,7 @@ const Home =(props) =>{
     };
     return(
         <div className="home-wrapper">
-            <Link className="home-link" to ="/howtolist">Welcome to howTo!</Link>
+            <Link to ="/howtolist">Welcome to howTo!</Link>
             
         </div>
     )
