@@ -32,9 +32,7 @@ const Schema = Yup.object().shape({
     };
     return (
       <div className="login">
-        <h1>
-          <ion-icon name="pin"></ion-icon>Airbnb Optimal Price
-        </h1>
+       
         <div className="flex-container">
          
           <div className="form-login">

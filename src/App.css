@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body{
+  background-color: lightblue;
+}
+NavLink {
+  text-decoration: none;
+}
+.home-wrapper{
+  margin-top: 36px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.howto-Nav{
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+.home-wrapper h2{
+  color: #1c5d76;
+}
+.home-link{
+  text-decoration: none;
+  color: #1c5d76;
+  font-weight: bold;
+  font-size:50px;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.howTo-card {
+  display:flex;
+  border: 1 px solid gray;
+  text-decoration: none;
+  
+
+}
+.howto-list-wrapper {
+  margin-top: 36px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.howto-list-title a {
+  text-decoration: none;
+}
+
+.howTo-header {
+  color:  #1c5d76;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #1c5d76;
+  font-weight: bold;
+  margin-right: 8px;
 }

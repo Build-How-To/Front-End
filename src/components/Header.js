@@ -30,6 +30,7 @@ const Header = props => {
             <h1>Welcome to howTo</h1>
             <HeaderNav>
             <NavLink to='/addhowto'>Add a howTo</NavLink>
+            <NavLink to='/logout'>Logout</NavLink>
             </HeaderNav>
         </HeaderDiv>
     );

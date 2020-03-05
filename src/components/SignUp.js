@@ -5,6 +5,7 @@ import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 
 
+
 class Signup extends React.Component {
   
   state = {
@@ -44,39 +45,49 @@ class Signup extends React.Component {
   render() {
     console.log("State:", this.state.credentials)
     return (
-      <div>
+      <div className='signup'>
         <form onSubmit={this.signup}>
+        <label htmlFor='username'>User Name</label>
           <input
             type="text"
             name="username"
             value={this.state.credentials.username}
             onChange={this.handleChange}
+            placeholder='User Name'
           />
+          <label htmlFor='password'>Password</label>
           <input
             type="password"
             name="password"
             value={this.state.credentials.password}
             onChange={this.handleChange}
+            placeholder="Password"
           />
+          <label htmlFor='email'>Email</label>
           <input
             type="text"
             name="email"
             value={this.state.credentials.email}
             onChange={this.handleChange}
+            placeholder='Email'
           />
+           <label htmlFor='fnameInput'>First Name</label>
           <input
             type="text"
             name="first_name"
             value={this.state.credentials.first_name}
             onChange={this.handleChange}
+            placeholder="First Name"
           />
+           <label htmlFor='lnameInput'>Last Name</label>
           <input
             type="text"
             name="last_name"
             value={this.state.credentials.last_name}
             onChange={this.handleChange}
+            placeholder="Last Name"
           />
-          <button>Log in</button>
+          <button>Sign Up</button>
         </form>
       </div>
     );
