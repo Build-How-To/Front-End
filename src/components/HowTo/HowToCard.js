@@ -16,12 +16,12 @@ const HowToCard =props =>{
         return <h2>Loading item data...</h2>
     }
     
-    useEffect(()=> {
-        axiosWithAuth()
-        .get('/')
-        .then
-        .catch
-    })
+    // useEffect(()=> {
+    //     axiosWithAuth()
+    //     .get('/')
+    //     .then
+    //     .catch
+    // })
     return (
         <div>
             <h2>Title:{guide.title}</h2>
