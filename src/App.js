@@ -11,20 +11,20 @@ import Login2 from './components/Login2';
 import Signup from './components/SignUp';
 
 
-
+import Logout from './components/Logout';
 import UpdateHowToForm from './components/HowTo/UpdateHowToForm';
 import Home from './components/Home';
 import Header from './components/Header';
 import AddHowToForm from './components/HowTo/AddHowToForm';
 import HowToList from './components/HowTo/HowToList';
 import HowToCard from './components/HowTo/HowToCard';
-import AddReviewForm from './components/AddReviewForm';
+import AddReviewForm from './components/AddReviewForm'
 import axiosWithAuth from './utils/axiosWithAuth';
 //contextAPI
 import { HowToContext } from "./contexts/HowToContext";
 import { HowToFormContext } from './contexts/HowToFormContext';
 
-export default function App(props) {
+const App = (props) => {
 
   
 
@@ -53,13 +53,14 @@ export default function App(props) {
 
           <Route exact path="/login" render={props =><Login2 {...props }/>} /> 
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/logout" component={Logout} />
           {/*<Route exact path="/signup" render={props =><FormikSingUpForm {...props }/>} />*/}
         
           <PrivateRoute exact path="/home" component={Home} />
           <PrivateRoute exact path="/howtolist" component={HowToList} />
-          <PrivateRoute exact path="/howtocard/:id" component={HowToCard} />
+          {/* <PrivateRoute exact path="/howtocard/:id" component={HowToCard} /> */}
           <PrivateRoute exact path="/addreviewform" component={AddReviewForm} />
-          <PrivateRoute exact path="/updatehowtoform" component={UpdateHowToForm} />
+          <PrivateRoute exact path="/updatehowtoform/:id" render={props => <UpdateHowToForm {...props} />} />
          
 
 
@@ -69,3 +70,5 @@ export default function App(props) {
      </div>
   );
 }
+
+export default App;

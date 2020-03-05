@@ -4,65 +4,68 @@ import { HowToFormContext } from '../../contexts/HowToFormContext';
 import styled from 'styled-components';
 import axiosWithAuth from '../../utils/axiosWithAuth';
 
-
+const initialItem = {
+    title:'',
+    description: '',
+    category: '',
+    difficulty:'',
+    creator_user_id:'',
+    tries: ''
+}
 
 
 const UpdateHowToForm = props => {
-//     const {howToList, setHowToList} = useContext(HowToFormContext)
+    const [item, setItem] =useState(initialItem);
+    const { id } = useParams();
+    console.log("The Props Obj:", props)
 
-//     const [howTo, setHowTo] = useState({
-//         title:'',
-//         description: '',
-//         category: '',
-//         difficulty:'',
-//         creator_user_id:'',
-//         tries: ''
-//       });
+    useEffect(() => {
+        const itemToUpdate = props.items.find(thing => `${thing.id}`===id);
+        if (itemToUpdate) {
+            setItem(itemToUpdate);
+        }
+    }, [props.items, id]);
 
-//       const { id } = useParams()
+    const changeHandler = ev => {
+        ev.persist();
+        let value =ev.target.value;
+        setItem({
+            ...item,
+            [ev.target.name]:value
+        });
+    }
 
-//       useEffect(() => {
-//           const itemToUpdate = howToList.find(thing => `${thing.id}` ===id);
-//           if (itemToUpdate) {
-//               setHowToList(itemtoUpdate);
-//           } 
-//       }, [howToList, id]);
+   
 
-//       const changeHandler = ev => {
-//           ev.persist();
-//           let value = ev.target.value;
-//       }
+const handleSubmit = e => {
+    e.preventDefault();
+    axiosWithAuth()
+    .put(`/guides/${id}`, item)
+    .then(res => {
+        console.log('debug2', res)
+        props.setItems(res.data);
+        // props.history.push(`howtolist/:${id}`);
 
-//       setHowToList({
-//           ...howToList, [ev.target.name]: value
-//       })
+    })
+    .catch(err => console.log(err));
+};
+    
 
-//       const handleSubmit = e => {
-//           e.preventDefault();
-//           axiosWithAuth()
-//           .put(`http://localhost.333/items/${id}`, item)
-//           .then(res => {
-//               setHowToList(res.data);
-//               props.history.push(`howtolist/${id}`);
-//           })
-//           .catch(err => console.log('error updating howTo', err))
-          
-
-//       }
 return (
-    <h1>Hello</h1>
-//     <form onSubmit= {handleSubmit}>
-//         <label htmlFor='title'>Title</label>
-//         <input
-//         id='title'
-//         name='title'
-//         type='text'
-//         onChange={changeHandler}
-//         placeholder="title"
-//         value={howTo.title}
-//     />
-// <button type='submit'>Add HowTo</button>
-//     </form>
+    <div>
+    <form onSubmit= {handleSubmit}>
+        <label htmlFor='title'>Title</label>
+        <input
+        id='title'
+        name='title'
+        type='text'
+        onChange={changeHandler}
+        placeholder="title"
+        // value={props.howTo.title}
+    />
+        <button type='submit'>Update</button>
+    </form>
+    </div>
 )
 }
 
