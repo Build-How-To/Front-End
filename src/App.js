@@ -9,10 +9,10 @@ import PrivateRoute from './components/PrivateRoute';
 import Login2 from './components/Login2';
 
 import Signup from './components/SignUp';
-import Home from './components/Home';
 
 
 
+import UpdateHowToForm from './components/HowTo/UpdateHowToForm';
 import Home from './components/Home';
 import Header from './components/Header';
 import AddHowToForm from './components/HowTo/AddHowToForm';
@@ -33,13 +33,14 @@ export default function App(props) {
    axiosWithAuth()
     .get('/guides')
     .then(res => {
+      console.log('response from guide axios call', res)
       //console.log('response from getguide API', res);
-      // setHowToList(res.data)
+      setHowToList(res.data)
     })
     .catch(err => {
       //console.error('error getting HowTo List', err);
-    }, [howTo]);
-  })
+    } );
+  },[])
  
   console.log ('howto state',howToList);
   
@@ -55,13 +56,14 @@ export default function App(props) {
         
           <PrivateRoute exact path="/home" component={Home} />
           <PrivateRoute exact path="/howtolist" component={HowToList} />
-          <PrivateRoute exact path="/howtocard" component={HowToCard} />
-          {/* <PrivateRoute exact path="/addhowto" component={AddHowToForm} /> */}
+          <PrivateRoute exact path="/howtocard/:id" component={HowToCard} />
+          <PrivateRoute exact path="/updatehowtoform" component={UpdateHowToForm} />
+         
 
 
       </Router>
       </HowToFormContext.Provider>
       </HowToContext.Provider>
-      </div>
+     </div>
   );
 }
