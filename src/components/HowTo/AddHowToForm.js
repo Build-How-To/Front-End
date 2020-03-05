@@ -3,31 +3,25 @@
 // import styled from 'styled-components';
 
 
-// const HowToform = styled.form `
-
-// display:flex;
-// align-items: center;
-// justify-content: center;
-// margin: 0 auto;
-// align-items: center;
-// max-width: 100%;
-// flex-direction: column;
-// width:300px; 
-// height: 350px;
-// padding: 30px;
-// `
-
-// const HowTolabel = styled.label `
-// padding: 10px;
-// text-align: left;
-
-// `
-// const HowTobutton = styled.button `
-// padding: 10px;
-// margin: 20px;
-
-// `
-
-// const AddHowToForm = props => {
-// const {handleChanges, submitForm, }
+// const AddHowT =props =>{
+//     const { howToList } =useContext(HowToContext)
+//     console.log('from the howto context', howToList)
+//     return (
+//         <div>
+//             {howToList.map(howTo => (
+//                 <div key={howTo.id}>
+//                     <NavLink exact to={`/howtocard/${howTo.id}`}>
+//                     <h1>Title: {howTo.title}</h1>
+//                     {/* <p>Description: {howTo.description}</p> */}
+//                     <p>Category: {howTo.category}</p>
+//                     <p>Difficulty: {howTo.difficulty}</p>
+//                     </NavLink>
+//                 </div>
+                
+                    
+//            ))}
+//         </div>
+//     )
 // }
+
+// export default HowToList;
