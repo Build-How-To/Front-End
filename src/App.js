@@ -18,6 +18,7 @@ import Header from './components/Header';
 import AddHowToForm from './components/HowTo/AddHowToForm';
 import HowToList from './components/HowTo/HowToList';
 import HowToCard from './components/HowTo/HowToCard';
+import AddReviewForm from './components/AddReviewForm';
 import axiosWithAuth from './utils/axiosWithAuth';
 //contextAPI
 import { HowToContext } from "./contexts/HowToContext";
@@ -57,6 +58,7 @@ export default function App(props) {
           <PrivateRoute exact path="/home" component={Home} />
           <PrivateRoute exact path="/howtolist" component={HowToList} />
           <PrivateRoute exact path="/howtocard/:id" component={HowToCard} />
+          <PrivateRoute exact path="/addreviewform" component={AddReviewForm} />
           <PrivateRoute exact path="/updatehowtoform" component={UpdateHowToForm} />
          
 
