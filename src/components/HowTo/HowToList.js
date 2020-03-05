@@ -3,7 +3,7 @@ import { Route, NavLink } from 'react-router-dom';
 import  { HowToContext } from '../../contexts/HowToContext';
 
 
-const HowToList =props =>{
+const HowToList = props =>{
     const { howToList } =useContext(HowToContext)
     console.log('from the howto context', howToList)
     return (
