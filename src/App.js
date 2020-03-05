@@ -9,7 +9,7 @@ import PrivateRoute from './components/PrivateRoute';
 import Login2 from './components/Login2';
 
 import Signup from './components/SignUp';
-import Home from './components/Home';
+
 
 
 
@@ -38,7 +38,7 @@ export default function App(props) {
     })
     .catch(err => {
       //console.error('error getting HowTo List', err);
-    }, [howTo]);
+    }, []);
   })
  
   console.log ('howto state',howToList);

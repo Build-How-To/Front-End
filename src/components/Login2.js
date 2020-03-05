@@ -24,8 +24,8 @@ const Schema = Yup.object().shape({
           localStorage.setItem("token", res.data.token);
           localStorage.setItem("userId", res.data.user_id);
           console.log("RES DATA", res.data);
-          props.setUserId(res.data.user_id);
-          props.history.push("/");
+          // props.setUserId(res.data.user_id);
+          props.history.push("/home");
         })
         .catch(err => console.log(err));
     };
