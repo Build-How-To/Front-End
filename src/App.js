@@ -71,7 +71,7 @@ const App = (props) => {
           <PrivateRoute exact path="/howtocard/:id" component={HowToCard} />
           <PrivateRoute exact path="/addreviewform" component={AddReviewForm} />
           <PrivateRoute exact path="/updatehowtoform/:id" render={props => <UpdateHowToForm {...props} />} />
-         
+          <PrivateRoute exact path="/addhowtoform" component={AddHowToForm} />
 
 
       </Router>
