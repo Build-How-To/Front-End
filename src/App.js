@@ -52,12 +52,13 @@ const App = (props) => {
         <HowToFormContext.Provider value ={{howToList, setHowToList}}>
       <Router>
       <nav>
-        <h1 className="howTo-header">howTo</h1>
+        <h2 className="howTo-header">howTo</h2>
           <div className="nav-links">
             {/* <NavLink exact to="/addhowtoform">Add howTo</NavLink> */}
             <NavLink exact to="/updatehowtoform">Update a howTo</NavLink>
             <NavLink exact to="/login">Login</NavLink>
             <NavLink exact to="/signup">Sign Up</NavLink>
+            <NavLink exact to="/home">Home</NavLink>
           </div>
       </nav>
       
