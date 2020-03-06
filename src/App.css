@@ -3,26 +3,26 @@
   box-sizing: border-box;
 }
 
-body{
+/* body{
   background-color: lightblue;
-}
-NavLink {
+} */
+/* NavLink {
   text-decoration: none;
-}
+} */
 
-.home-wrapper{
+/* .home-wrapper{
   margin-top: 36px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-}
+  justify-content: center; */
+/* } */
 .howto-Nav{
   text-decoration: none;
 }
 
-.home-wrapper h2{
+ .home-wrapper h2{
   color: #1c5d76;
-}
+} 
 .home-link{
   text-decoration: none;
   color: #1c5d76;
@@ -31,8 +31,9 @@ NavLink {
 
 }
 
-.howTo-card {
+.howto-Card {
   display:flex;
+  flex-wrap: wrap;
   border: 1 px solid gray;
   text-decoration: none;
   

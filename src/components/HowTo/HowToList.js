@@ -1,8 +1,22 @@
 import React, { useContext } from 'react';
 import { Route, NavLink } from 'react-router-dom';
 import  { HowToContext } from '../../contexts/HowToContext';
+import styled from 'styled-components';
 
 
+const StyledHowToDiv = styled.div`
+display:flex;
+  border: 1 px solid black;
+  text-decoration: none;
+  color: red;
+`;
+// const styledH1 = styled.h1 `
+// font-size: 20px;
+// `
+
+const StyledButton =styled.button`
+background-color: green;
+`
 const HowToList = props =>{
     const { howToList } =useContext(HowToContext)
     console.log('from the howto context', howToList)
@@ -10,14 +24,19 @@ const HowToList = props =>{
     return (
         <div className="howto-list-wrapper">
             {howToList.map(howTo => (
-                <div className="howTo-card" key={howTo.id}>
+
+                <StyledHowToDiv key={howTo.id}>
                     <NavLink className="howto-Nav"exact to={`/howtocard/${howTo.id}`}>
-                    <h1>{howTo.title}</h1>
+                        <div className="howto-Card">
+                    <styledH1>{howTo.title}</styledH1>
                     {/* <p>Description: {howTo.description}</p> */}
                     <p>Category: {howTo.category}</p>
                     <p>Difficulty: {howTo.difficulty}</p>
+                    </div>
                     </NavLink>
-                </div>
+                    <StyledButton>Hello</StyledButton>
+                </StyledHowToDiv>
+                
                 
                     
            ))}
