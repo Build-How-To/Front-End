@@ -32,10 +32,6 @@ const StyledForm = styled.form`
     margin:5% 10%;
     margin-top:0;
   }
-
-  input[type=text]:focus {
-    background-color: lue;
-  }
 `
 
 
