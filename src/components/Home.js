@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import  { HowToContext } from '../contexts/HowToContext';
-
+import { withRouter } from 'react-router-dom'
 
 
 const StyledButton = styled.button`
@@ -43,7 +43,7 @@ const StyledHomeDiv = styled.div`
 
 
 function Home(props) {
- 
+  const { howToList } =useContext(HowToContext)
   const routeToList = event => {
     event.preventDefault();
     console.log('here is the props',props)
@@ -60,7 +60,7 @@ function Home(props) {
   );
 }
 
-export default Home;
+export default withRouter(Home);
 
 
 
