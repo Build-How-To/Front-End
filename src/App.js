@@ -53,12 +53,12 @@ const App = (props) => {
       <Router>
       <nav>
         <h1 className="howTo-header">howTo</h1>
-        <div className="nav-links">
-          <NavLink exact to="/addhowtoform">Add howTo</NavLink>
-          <NavLink exact to="/updatehowtoform">Update a howTo</NavLink>
-          <NavLink exact to="/login">Login</NavLink>
-          <NavLink exact to="/signup">Sign Up</NavLink>
-        </div>
+          <div className="nav-links">
+            <NavLink exact to="/addhowtoform">Add howTo</NavLink>
+            <NavLink exact to="/updatehowtoform">Update a howTo</NavLink>
+            <NavLink exact to="/login">Login</NavLink>
+            <NavLink exact to="/signup">Sign Up</NavLink>
+          </div>
       </nav>
       
           <Route exact path="/login" render={props =><Login2 {...props }/>} /> 
