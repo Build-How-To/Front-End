@@ -33,11 +33,12 @@ position: relative;
   transition: box-shadow 0.2s;
 `
 const StyledHomeDiv = styled.div`
-display: flex;
+  height: 50vh;
+  display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  
-
+  align-content: center;
+  justify-content: space-around;
 `
 
 

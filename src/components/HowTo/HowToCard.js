@@ -3,7 +3,26 @@ import { useParams, useHistory } from 'react-router';
  
 import  { HowToContext } from '../../contexts/HowToContext';
 import axiosWithAuth from '../../utils/axiosWithAuth';
+import styled from 'styled-components';
 
+const StyledDiv = styled.div`
+    margin: 3% 4%;
+`
+const StyledButtonsGroup = styled.div`
+
+    margin-top: 5%;
+
+    button{
+        border-radius: 4px;
+        border: 2px solid #e7e7e7;
+        padding: 6px 30px;
+        margin-right: 12%;
+    }
+
+    button:hover {
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+`
 
 const HowToCard = props =>{
     let history = useHistory();
@@ -38,13 +57,14 @@ const HowToCard = props =>{
     
     
     return (
-        <div>
+        <StyledDiv>
             <h2 className="howto-list-title">{guide.title}</h2>
             <h2>Description:{guide.description}</h2>
-             <button onClick={handleEdit}>Edit</button>      
-             <button onClick={handleDelete}>Delete</button> 
-              
-        </div>
+            <StyledButtonsGroup>
+                <button onClick={handleEdit}>Edit</button>      
+                <button onClick={handleDelete}>Delete</button>
+            </StyledButtonsGroup> 
+        </StyledDiv>
     )
 }
 

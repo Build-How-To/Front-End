@@ -5,17 +5,28 @@ import styled from 'styled-components';
 
 
 const StyledHowToDiv = styled.div`
-display:flex;
-  border: 1 px solid black;
-  text-decoration: none;
-  align-items: center;
-`
-const StyledHowToTitle = styled.h2`
-font-size:20px;
-`
-const StyledHowToP = styled.p`
-font-size:12px;
+    width: 50%;
+    background-color: #1c5d76;
+    display: flex;
+    border: 1px solid black;
+    text-decoration: none;
+    align-items: center;
+    justify-content: space-around;
+    margin: 3% 0;
 
+    h2{
+        font-size: 2rem;
+    }
+
+    p{
+        font-size:1.8rem
+    }
+`
+
+const StyledListWrapper = styled.div`
+    display:flex;
+    flex-direction: column;
+    align-items:center;
 `
 
 const HowToList = props =>{
@@ -23,27 +34,21 @@ const HowToList = props =>{
     // console.log('from the howto context', howToList)
     
     return (
-        <div className="howto-list-wrapper">
+        <StyledListWrapper>
             {howToList.map(howTo => (
 
-                <div key={howTo.id}>
-                    <StyledHowToDiv>
+                <StyledHowToDiv key={howTo.id}>
                     <NavLink className="howto-Nav"exact to={`/howtocard/${howTo.id}`}>
                        
-                    <StyledHowToTitle>{howTo.title}</StyledHowToTitle>
+                    <h2>{howTo.title}</h2>
                     {/* <p>Description: {howTo.description}</p> */}
                     <p>Category: {howTo.category}</p>
                     <p>Difficulty: {howTo.difficulty}</p>
                     </NavLink>
-                    </StyledHowToDiv>
                     
-                </div>    
-        
-                
-                
-                    
+                </StyledHowToDiv>       
            ))}
-        </div>
+        </StyledListWrapper>
     )
 }
 
