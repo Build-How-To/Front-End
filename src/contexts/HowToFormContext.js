@@ -1,3 +1,3 @@
-import { createContext } from 'react';
+import React from 'react';
 
-export const HowToFormContext = createContext();
+export const HowToFormContext = React.createContext();

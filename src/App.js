@@ -52,12 +52,14 @@ const App = (props) => {
         <HowToFormContext.Provider value ={{howToList, setHowToList}}>
       <Router>
       <nav>
-        <h1 className="howTo-header">howTo</h1>
+        <h2 className="howTo-header">howTo</h2>
           <div className="nav-links">
-            <NavLink exact to="/addhowtoform">Add howTo</NavLink>
+            {/* <NavLink exact to="/addhowtoform">Add howTo</NavLink> */}
             <NavLink exact to="/updatehowtoform">Update a howTo</NavLink>
             <NavLink exact to="/login">Login</NavLink>
             <NavLink exact to="/signup">Sign Up</NavLink>
+            <NavLink exact to="/home">Home</NavLink>
+            <NavLink exact to="/logout">Logout</NavLink>
           </div>
       </nav>
       
@@ -70,14 +72,13 @@ const App = (props) => {
           <PrivateRoute exact path="/howtolist" component={HowToList} />
           <PrivateRoute exact path="/howtocard/:id" component={HowToCard} />
           <PrivateRoute exact path="/addreviewform" component={AddReviewForm} />
-          <PrivateRoute exact path="/updatehowtoform/:id" render={props => <UpdateHowToForm {...props} />} />
+          {/* <PrivateRoute exact path="/updatehowtoform" render={props => <UpdateHowToForm {...props} />} /> */}
           <PrivateRoute exact path="/addhowtoform" component={AddHowToForm} />
-
 
       </Router>
       </HowToFormContext.Provider>
       </HowToContext.Provider>
-     </div>
+  </div>
   );
 }
 

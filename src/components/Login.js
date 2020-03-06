@@ -1,5 +1,44 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+import styled from 'styled-components';
+
+
+const LoginDiv = styled.div`
+  width: 100%;
+  margin: 2% 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content:center;
+
+  h2{
+    text-align:center;
+  }
+`
+
+const LoginForm = styled.form`
+  width: 30%;
+  background: Gainsboro;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+  padding: 0.6%;
+
+  label{
+
+  }
+
+  input{
+    width: 100%;
+    margin:5% 10%;
+    margin-top:0;
+  }
+
+  input[type=text]:focus {
+    background-color: lue;
+  }
+`
+
 
 class Login extends React.Component {
   state = {
@@ -34,9 +73,9 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.login}>
-          <label>Username
+      <LoginDiv>
+        <LoginForm onSubmit={this.login}>
+          <label htmlFor='username'>Username</label>
           <input
             type="text"
             name="username"
@@ -45,7 +84,7 @@ class Login extends React.Component {
             onChange={this.handleChange}
             
           />
-          </label>
+          <label htmlFor='password'>Password</label>
           <input
             type="password"
             name="password"
@@ -54,8 +93,8 @@ class Login extends React.Component {
             onChange={this.handleChange}
           />
           <button>Log in</button>
-        </form>
-      </div>
+        </LoginForm>
+      </LoginDiv>
     );
   }
 }

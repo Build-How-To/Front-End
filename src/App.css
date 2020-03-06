@@ -1,4 +1,4 @@
-/* Set every element's box-sizing to border-box */
+
 * {
     box-sizing: border-box;
     max-width: 100%;
@@ -18,30 +18,77 @@ h2{
   font-size: 1.8rem;
 }
 
-label{
-  font-size: 1.2rem;
+
+
+html {
+  font-size: 62.5%;
+  background-image: url(./img/crafts-img.jpg);
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+}
+html h1,
+html h2,
+html h3,
+html p {
+  font-family: 'Montserrat';
+  color: white;
+}
+html h1 {
+  font-size: 8rem;
+  color: white;
+}
+html h2 {
+  color: white;
+  font-size: 6rem;
+  font-weight: bold;
+}
+html h3 {
+  color: white;
+  font-size: 3.5rem;
+}
+html p {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 3rem;
+}
+@media (max-width: 500px), (max-width: 800px) {
+  html p {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 500px) {
+  html h1 {
+    font-size: 4rem;
+  }
+  html h2 {
+    font-size: 3rem;
+  }
+  html h3 {
+    font-size: 2rem;
+  }
 }
 
 
-/* body{
-  background-color: lightblue;
-} */
-/* NavLink {
-  text-decoration: none;
-} */
+footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+  padding: 30px 0px 30px 0px;
+  color: white;
+  font-family: 'Montserrat';
+}
 
-/* .home-wrapper{
-  margin-top: 36px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; */
-/* } */
+/*CSS By Mandi*/
 .howto-Nav{
   text-decoration: none;
 }
 
  .home-wrapper h2{
   color: #1c5d76;
+  font-size: 20px;
+  
 } 
 .home-link{
   text-decoration: none;
@@ -60,7 +107,7 @@ label{
 
 }
 .howto-list-wrapper {
-  margin-top: 36px;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -71,6 +118,8 @@ label{
 
 .howTo-header {
   color:  #1c5d76;
+  font-size: 30px;
+  margin-bottom: 5px;
 }
 
 .nav-links {
@@ -82,5 +131,5 @@ label{
   text-decoration: none;
   color: #1c5d76;
   font-weight: bold;
-  font-size: 1.5rem;
+
 }
