@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Route, NavLink } from 'react-router-dom';
 import  { HowToContext } from '../../contexts/HowToContext';
 import styled from 'styled-components';
+import heart from '../../img/heart.png';
 
 
 const StyledHowToDiv = styled.div`
@@ -29,6 +30,13 @@ const StyledListWrapper = styled.div`
     align-items:center;
 `
 
+const StyledImg= styled.img`
+height: 1.4rem;
+background-color: #1c5d76;
+margin-bottom: 2%;
+
+`
+
 const HowToList = props =>{
     const { howToList } =useContext(HowToContext)
     // console.log('from the howto context', howToList)
@@ -44,6 +52,13 @@ const HowToList = props =>{
                     {/* <p>Description: {howTo.description}</p> */}
                     <p>Category: {howTo.category}</p>
                     <p>Difficulty: {howTo.difficulty}</p>
+                    <div>
+                        <StyledImg 
+                        alt='post thumb'
+                        className='post-image'
+                        src={heart}
+                        />
+                    </div>
                     </NavLink>
                     
                 </StyledHowToDiv>       

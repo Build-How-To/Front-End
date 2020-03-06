@@ -66,7 +66,7 @@ class Login extends React.Component {
           console.log('response', res)
         window.localStorage.setItem('token', res.data.token);
         // navigate the user to /protected (whatever landing page)
-        this.props.history.push('/home');
+        this.props.history.push('/howtolist');
       })
       .catch(err => console.log(err));
   };
