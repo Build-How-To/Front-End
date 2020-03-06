@@ -13,7 +13,7 @@ const HowToCard = props =>{
     }
 
     const handleDelete = e => {
-        e.prevent.Default();
+        // e.prevent.Default();
         axiosWithAuth()
         .delete (`/guides/${id}`)
         .then(res => {
