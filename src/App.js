@@ -21,7 +21,8 @@ import HowToCard from './components/HowTo/HowToCard';
 import AddReviewForm from './components/AddReviewForm'
 import axiosWithAuth from './utils/axiosWithAuth';
 //contextAPI
-
+import { HowToContext } from "./contexts/HowToContext";
+import { HowToFormContext } from './contexts/HowToFormContext';
 import './App.css';
 
 const App = (props) => {
@@ -47,7 +48,8 @@ const App = (props) => {
   
   return (
     <div className='App'>
-      
+      <HowToContext.Provider value={{howToList}}>
+        <HowToFormContext.Provider value ={{howToList, setHowToList}}>
       <Router>
       <nav>
         <h1 className="howTo-header">howTo</h1>
@@ -68,10 +70,12 @@ const App = (props) => {
           <PrivateRoute exact path="/howtolist" component={HowToList} />
           <PrivateRoute exact path="/howtocard" component={HowToCard} />
           <PrivateRoute exact path="/addreviewform" component={AddReviewForm} />
-          <PrivateRoute exact path="/updatehowtoform" render={props => <UpdateHowToForm {...props} />} />
+          {/* <PrivateRoute exact path="/updatehowtoform" render={props => <UpdateHowToForm {...props} />} /> */}
           <PrivateRoute exact path="/addhowtoform" component={AddHowToForm} />
 
       </Router>
+      </HowToFormContext.Provider>
+      </HowToContext.Provider>
   </div>
   );
 }
