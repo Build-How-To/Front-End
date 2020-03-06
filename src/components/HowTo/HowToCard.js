@@ -15,7 +15,7 @@ const HowToCard = props =>{
     const handleDelete = e => {
         e.prevent.Default();
         axiosWithAuth()
-        .delete (``)
+        .delete (`/guides/${id}`)
         .then(res => {
             props.howTo(res.data);
             props.history.push('/howtolist');
@@ -32,7 +32,7 @@ const HowToCard = props =>{
         thing => `${thing.id}`===id
     );
     if(!howToList.length || !guide) {
-        return <p></p>
+        return <p>retrieving the data</p>
     }
 
     

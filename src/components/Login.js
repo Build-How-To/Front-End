@@ -2,6 +2,20 @@ import React, { useState } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import styled from 'styled-components';
 
+
+const LoginDiv = styled.div`
+  width: 100%;
+  margin: 2% 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content:center;
+
+  h2{
+    text-align:center;
+  }
+`
+
 const LoginForm = styled.form`
   width: 30%;
   background: Gainsboro;
@@ -24,22 +38,6 @@ const LoginForm = styled.form`
     background-color: lue;
   }
 `
-const LoginDiv = styled.div`
-  width: 100%;
-  margin: 2% 0;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-content:center;
-
-  h2{
-    text-align:center;
-  }
-`
-
-
-
-
 
 
 class Login extends React.Component {

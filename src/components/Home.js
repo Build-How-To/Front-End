@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import  { HowToContext } from '../contexts/HowToContext';
 
 
 
@@ -38,9 +39,13 @@ display: flex;
   
 
 `
+
+
 function Home(props) {
+ 
   const routeToList = event => {
     event.preventDefault();
+    console.log('here is the props',props)
     props.history.push('/howtolist');
   };
 
