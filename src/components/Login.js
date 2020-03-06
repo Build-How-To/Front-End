@@ -41,6 +41,7 @@ const LoginDiv = styled.div`
 
 
 
+
 class Login extends React.Component {
   state = {
     credentials: {
@@ -76,7 +77,7 @@ class Login extends React.Component {
     return (
       <LoginDiv>
         <LoginForm onSubmit={this.login}>
-          <label>Username
+          <label htmlFor='username'>Username</label>
           <input
             type="text"
             name="username"
@@ -85,7 +86,7 @@ class Login extends React.Component {
             onChange={this.handleChange}
             
           />
-          </label>
+          <label htmlFor='password'>Password</label>
           <input
             type="password"
             name="password"
