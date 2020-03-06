@@ -129,7 +129,11 @@ footer {
 
 .nav-links a {
   text-decoration: none;
-  color: #1c5d76;
+  color: CornflowerBlue;
   font-weight: bold;
+  font-size: 1.5rem;
+}
 
+label{
+  font-size:1.2rem;
 }
