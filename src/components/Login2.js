@@ -31,10 +31,6 @@ const Schema = Yup.object().shape({
         .catch(err => console.log(err));
     };
     return (
-      <div className="login">
-       
-        <div className="flex-container">
-         
           <div className="form-login">
             <h2>Login</h2>
             <Formik
@@ -77,7 +73,7 @@ const Schema = Yup.object().shape({
                     <button type="submit" disabled={isSubmitting}>
                       Submit
                     </button>
-                    <Link to="/register">
+                    <Link to="/signup">
                       <button>Register</button>
                     </Link>
                   </div>
@@ -91,8 +87,6 @@ const Schema = Yup.object().shape({
               )}
             </Formik>
           </div>
-        </div>
-      </div>
     );
   };
   export default Login;
