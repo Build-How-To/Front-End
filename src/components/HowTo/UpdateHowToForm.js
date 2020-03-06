@@ -1,16 +1,12 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState,  useEffect } from 'react';
 import { useParams } from 'react-router';
-import { HowToFormContext } from '../../contexts/HowToFormContext';
+
 import styled from 'styled-components';
 import axiosWithAuth from '../../utils/axiosWithAuth';
 
 const initialItem = {
     title:'',
-    description: '',
-    category: '',
-    difficulty:'',
-    creator_user_id:'',
-    tries: ''
+    description: ''
 }
 
 
@@ -35,7 +31,6 @@ const UpdateHowToForm = props => {
         });
     }
 
-   
 
 const handleSubmit = e => {
     e.preventDefault();
@@ -62,6 +57,15 @@ return (
         onChange={changeHandler}
         placeholder="title"
         // value={props.howTo.title}
+    />
+    <label htmlFor='description'>Description</label>
+        <input
+        id='description'
+        name='description'
+        type='text'
+        onChange={changeHandler}
+        placeholder="description"
+        // value={props.howTo.description}
     />
         <button type='submit'>Update</button>
     </form>

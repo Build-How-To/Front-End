@@ -6,8 +6,10 @@ import axiosWithAuth from '../../utils/axiosWithAuth';
 
 const HowToCard = props =>{
     let history = useHistory();
-    const handleClick = e => {
+    const handleEdit = e => {
         e.preventDefault()
+       
+
         history.push(`/updatehowtoform/${id}`)
     }
     
@@ -29,8 +31,8 @@ const HowToCard = props =>{
         <div>
             <h2 className="howto-list-title">{guide.title}</h2>
             <h2>Description:{guide.description}</h2>
-             <button onClick={handleClick}>Edit</button>      
-             <button onClick={handleClick}>Delete</button> 
+             <button onClick={handleEdit}>Edit</button>      
+             {/* <button onClick={handleClick}>Delete</button>  */}
               
         </div>
     )

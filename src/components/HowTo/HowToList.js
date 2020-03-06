@@ -9,10 +9,7 @@ display:flex;
   border: 1 px solid black;
   text-decoration: none;
   color: red;
-`;
-// const styledH1 = styled.h1 `
-// font-size: 20px;
-// `
+`
 
 const StyledButton =styled.button`
 background-color: green;
@@ -28,13 +25,13 @@ const HowToList = props =>{
                 <StyledHowToDiv key={howTo.id}>
                     <NavLink className="howto-Nav"exact to={`/howtocard/${howTo.id}`}>
                         <div className="howto-Card">
-                    <styledH1>{howTo.title}</styledH1>
+                    <h1>{howTo.title}</h1>
                     {/* <p>Description: {howTo.description}</p> */}
                     <p>Category: {howTo.category}</p>
                     <p>Difficulty: {howTo.difficulty}</p>
                     </div>
                     </NavLink>
-                    <StyledButton>Hello</StyledButton>
+                    
                 </StyledHowToDiv>
                 
                 
